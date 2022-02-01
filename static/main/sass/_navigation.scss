@@ -1,0 +1,147 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+
+.desktopNav{
+    position: absolute;
+    width: 100%;
+    max-width: 1600px;
+    left: 0;
+    right: 0;
+    @include centerObj();
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 10000;
+    .logoBox{
+        width: 125px;
+        img{
+            width: 100%;
+        }
+    }
+    .navElements{
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        a{
+            text-decoration: none;
+            list-style: none;
+            padding: 0px 40px;
+            font-size: 20px;
+            color: $mainBlue;
+        }
+    }
+    .ctaArea{
+        width: 125px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 60px;
+        &:hover .navCtaTag{
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        }
+        .navCtaTag{
+            background: none;
+            color: $almostWhite;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 10px 35px;
+            border-radius: 10px;
+            border: 2px solid $almostWhite;
+            transition: all 1s ease;
+        }
+    }
+    @media screen and (max-width: 1200px) {
+        display: none;
+    }
+}
+.mobileNav{
+    width: 100vw;
+    z-index: 100;
+    padding: 10px 0px;
+    position: absolute;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media screen and (min-width: 1200px) {
+        display: none;
+    }
+    .logoBox{
+        width: 100px;
+        z-index: 11;
+    }
+    #openIcon{
+        position: absolute;
+        width: 25px;
+        top: 15px;
+        right: 15px;
+    }
+}
+.mobileMenu{
+    width: 100vw;
+    height: 110vh;
+    z-index: 900;
+    position: fixed;
+    background: rgba(21, 127, 255, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
+    display: none;
+    ul{
+        width: 100%;
+        margin-top: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        a{
+            text-decoration: none;
+            li{
+                color: $almostWhite;
+                font-size: 32px;
+                padding: 10px 0px;
+                list-style: none;
+                text-align: center;
+            }
+        }
+        
+    }
+    #closeIcon{
+        position: absolute;
+        width: 25px;
+        top: 15px;
+        right: 15px;
+    }
+}
+.mainFooter{
+    background: $mainBlue;
+    padding: 40px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .box{
+        width: 90%;
+        max-width: 200px;
+        img{
+            @include imgFill();
+        }
+    }
+}
+.scrollDown nav{
+    transform: translate3d(0, -100%, 0);
+}
+.scrollUp nav{
+    position: fixed;
+    top: 0;
+    background: rgb(252, 251, 250, 0.8);
+    backdrop-filter: saturate(180%) blur(20px);
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    .ctaArea{
+        .navCtaTag{
+            color: $mainBlue;
+            border: 2px solid $mainBlue;
+        }
+    }
+}

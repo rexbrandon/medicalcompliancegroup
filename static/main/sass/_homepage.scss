@@ -1,0 +1,640 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.homeHeaderArea{
+    height: 100vh;
+    max-height: 800px;
+    padding: 40px 0px 20px;
+    background-image: url('/static/main/img/assets/heroBackground.svg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    .heroContent{
+        width: 90%;
+        max-width: 1400px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        @include centerObj();
+        .heroLeftSide{
+            width: 90%;
+            max-width: 500px;
+            @include centerObj();
+            .heroInfoBox{
+                background: rgba(21, 127, 255, 0.8);
+                backdrop-filter: saturate(180%) blur(20px);
+                box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+                border-radius: 10px;
+                padding: 30px;
+                width: 65%;
+                @media screen and (max-width: 1000px) {
+                    width: 90%;
+                    @include centerObj();
+                }
+                @media screen and (max-width: 450px) {
+                    padding: 30px 15px;
+                }
+                .heroStandout{
+                    color: $almostWhite;
+                    font-size: 30px;
+                    padding: 20px 0px 10px;
+                    min-height: 85px;
+                }
+                .heroText{
+                    font-size: 24px;
+                    padding: 10px 0px;
+                    font-weight: 200;
+                    color: $lighterGrey;
+                }
+                a{
+                    text-decoration: none;
+                    &:hover .heroCta{
+                        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+                    }
+                    .heroCta{
+                        width: 90%;
+                        margin: 40px 0px 20px 0px;
+                        padding: 15px 0px;
+                        @include centerObj;
+                        background: $almostWhite;
+                        border-radius: 10px;
+                        color: $mainBlue;
+                        transition: all 1s ease;
+                        p{
+                            font-size: 20px;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+        .heroRightSide{
+            display: flex;
+            align-items: center;
+            width: 90%;
+            max-width: 650px;
+            @media screen and (max-width: 700px) {
+                display: none;
+            }
+            .heroImgBoxs{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                .break {
+                    flex-basis: 100%;
+                    height: 0;
+                  }
+                .imgBox{
+                    width: 225px;
+                    margin: 15px 30px;
+                    img{
+                        width: 100%;
+                    }
+                    @media screen and (max-width: 1200px) {
+                        width: 150px;
+                    }
+                }
+            }
+        }
+    }
+}
+.homeIntroArea{
+    position: relative;
+    padding: 20px 0px 40px;
+    background: $lighterGrey;
+    .custom-shape-divider-top-1633193064 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+    }
+    .custom-shape-divider-top-1633193064 svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 465px;
+        transform: rotateY(180deg);
+    }
+    .custom-shape-divider-top-1633193064 .shape-fill {
+        fill: $mainBlue;
+    }
+    .contentArea{
+        max-width: 1800px;
+        @include centerObj();
+        .containerHeader{
+            @include containerHeader();
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+            border-radius: 10px;
+            .containerTitle{
+                @include containerTitle($almostWhite);
+            }
+            .containerSubtitle{
+                @include containerSubtitle($almostWhite);
+            }
+        }
+        .aboutBlocks{
+            position: relative;
+            width: 95%;
+            padding: 60px 0px;
+            max-width: 1400px;
+            @include centerObj();
+            z-index: 11;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            .aboutBlock{
+                width: 90%;
+                max-width: 300px;
+                margin: 20px;
+                padding: 20px;
+                background: rgb(252, 251, 250, 0.8);
+                backdrop-filter: saturate(180%) blur(20px);
+                box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+                border-radius: 5px;
+                .blockTitle{
+                    margin-left: 5%;
+                    height: 100px;
+                    font-size: 24px;
+                    color: $mainBlue;
+                }
+                .imgBox{
+                    width: 200px;
+                    height: 200px;
+                    padding: 15px 0px;
+                    @include centerObj();
+                    img{
+                        @include imgFill();
+                    }
+                }
+                .numberIconBox{
+                    width: 50px;
+                    height: 50px;
+                    padding: 10px;
+                    img{
+                        @include imgFill();
+                        box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+                    }
+                }
+                .blockInfo{
+                    font-size: 22px;
+                    padding: 10px 5px;
+                }
+            }
+        }
+        .ctaArea{
+            padding: 20px 10px;
+            a{
+                text-decoration: none;
+                color: white;
+                text-decoration: none;
+                color: white;
+                font-size: 18px;
+                text-align: center;
+                .ctaBox{
+                    width: 90%;
+                    max-width: 800px;
+                    @include centerObj();
+                    padding: 10px 5px;
+                    border-radius: 50px;
+                    background: $mainBlue;
+                    .ctaText{
+                        font-weight: 300;
+                    }
+                }
+            }
+        }
+    }
+}
+.homePricing{
+    padding: 80px 0px;
+    background: $lighterGrey;
+    .contentArea{
+        max-width: 1800px;
+        @include centerObj();
+        .containerHeader{
+            @include containerHeader();
+            .containerTitle{
+                @include containerTitle($mainBlue);
+            }
+            .containerSubtitle{
+                @include containerSubtitle(black);
+            }
+        }
+        .pricingBlocks{
+            padding: 20px;
+            width: 90%;
+            max-width: 1200px;
+            @include centerObj();
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            .emphasize{
+                background: $almostWhite;
+            }
+            .block{
+                width: 90%;
+                max-width: 350px;
+                padding: 40px 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .imgBackground{
+                    width: 200px;
+                    height: 200px;
+                    border-radius: 50%;
+                    background: $babyBlue;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .imgArea{
+                        width: 150px;
+                        height: 150px;
+                        img{
+                            @include imgFill();
+                            object-fit: contain;
+                        }
+                    }
+                }
+                .blockTitle{
+                    text-align: center;
+                    text-transform: uppercase;
+                    color: $accentBlue;
+                    padding-top: 40px;
+                }
+                .deviceNumber{
+                    color: grey;
+                    padding: 10px 0px;
+                }
+                .price{
+                    font-size: 30px;
+                    padding-top: 40px;
+                    a{
+                        text-decoration: none;
+                        color: $almostWhite;
+                        background: $accentBlue;
+                        padding: 10px;
+                        font-weight: 800;
+                        border-radius: 5px;
+                        box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+                        transition: all 1s ease-in-out;
+                        &:hover{
+                            color: $mainBlue;
+                            background: $almostWhite;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.blogArea{
+    position: relative;
+    padding: 40px 0px;
+    .recentBlogArea{
+        padding: 80px 0px;
+        @include centerObj();
+        background: $mainBlue;
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 90%;
+            max-width: 1200px;
+            @include centerObj();
+            .titleSide{
+                width: 90%;
+                max-width: 500px;
+                .subtitle{
+                    text-transform: uppercase;
+                    color: $lightGrey;
+                    padding: 5px 0px;
+                    font-weight: 400;
+                }
+                .title{
+                    font-size: 32px;
+                    max-width: 90%;
+                    padding: 20px 0px;
+                    font-weight: 700;
+                    a{
+                        text-decoration: none;
+                        color: $almostWhite;
+                        transition: all .5s ease;
+                    }
+                }
+                p{
+                    font-weight: 100;
+                    color: $almostWhite;
+                }
+            }
+            .pictureSide{
+                width: 90%;
+                max-width: 500px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10px;
+                    object-fit: cover;
+                    transition: all .5s ease;
+                    border-radius: 30px;
+                    box-shadow: rgba(0, 0, 0, 0.6) 0px 18px 50px -10px;
+                }
+            }
+        }
+    }
+    .contentArea{
+        @include centerObj();
+        max-width: 1800px;
+        padding: 30px 0px;
+        .containerHeader{
+            @include containerHeader();
+            .containerTitle{
+                @include containerTitle($mainBlue);
+            }
+            .containerSubtitle{
+                @include containerSubtitle(black);
+            }
+        }
+        .blogPage{
+            padding: 20px 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: $lighterGrey;
+            flex-direction: column;
+            flex-wrap: wrap;
+            .blogCards{
+                width: 95%;
+                max-width: 1200px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                @include centerObj();
+                .card{
+                    width: 90%;
+                    max-width: 450px;
+                    margin: 30px;
+                    background: rgb(252, 251, 250, 0.8);
+                    backdrop-filter: saturate(180%) blur(20px);
+                    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+                    border-radius: 5px;
+                    border-radius: 20px;
+                    box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+                    z-index: 10;
+                    @media screen and (max-width: 500px){
+                        margin: 30px 0px;
+                    }
+                    .imgArea{
+                        width: 100%;
+                        height: 250px;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: 20px 20px 0px 0px;
+                            transition: all .5s ease;
+                        }
+                    }
+                    .categoryBox{
+                        width: 90%;
+                        margin-left: 5%;
+                        padding: 13px 0px;
+                        .category{
+                            text-decoration: none;
+                            color: $mainBlue;
+                            padding: 3px 8px;
+                            border: 1px solid $mainBlue;
+                            border-radius: 2px;
+                        }
+                    }
+                    .TitleBox{
+                        height: 55px;
+                        padding: 10px 0px;
+                        display: flex;
+                        align-items: flex-start;
+                        width: 90%;
+                        margin-left: 5%;
+                        .title{
+                            font-weight: 500;
+                            font-size: 23px;
+                            color: black;
+                        }
+                    }
+                    .introBox{
+                        width: 90%;
+                        margin-left: 5%;
+                        padding: 10px 0px;
+                        p{
+                            font-size: 18px;
+                            color: #222;
+                        }
+                        .intro{
+                            font-weight: 300;
+                            color: #555;
+                        }
+                    }
+                    .authorBox{
+                        width: 90%;
+                        margin-left: 5%;
+                        padding: 10px 0px;
+                        p{
+                            font-weight: 200;
+                        }
+                    }
+                    .linkBox{
+                        width: 90%;
+                        margin-left: 5%;
+                        margin-bottom: 10px;
+                        padding: 10px 0px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .link{
+                            width: 100%;
+                            padding: 10px 0px;
+                            text-decoration: none;
+                            background: $mainBlue;
+                            color: $almostWhite;
+                            text-align: center;
+                            transition: all .5s ease-in;
+                            &:hover{
+                                background: $almostWhite;
+                                color: $mainBlue;
+                                box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+                            }
+                        }
+                    }
+                }
+            }
+            .btnArea{
+                padding: 40px 0px 80px;
+                #loadMoreBlogs{
+                    background: $lightGrey;
+                    color: $mainBlue;
+                    border: 1px solid $mainBlue;
+                    border-radius: 2px;
+                    font-size: 22px;
+                    padding: 10px 20px;
+                    transition: all .5s ease-in-out;
+                    &:hover{
+                        background: $mainBlue;
+                        color: $lightGrey;
+                        border-radius: 5px;
+                        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+                    }
+                }
+            }
+        }
+    }
+}
+.homeContact{
+    padding: 80px 0px;
+    background: $mainBlue;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .contentContainer{
+        width: 90%;
+        max-width: 1000px;
+        padding: 30px 10px;
+        margin: 30px 0px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: top;
+        background: $almostWhite;
+        box-shadow: rgba(50, 50, 93, 0.1) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.15) 0px 18px 36px -18px inset;
+        border-radius: 10px;
+        form{
+            width: 90%;
+            max-width: 400px;
+            margin-left: 5%;
+            padding: 20px 0px;
+            input[type=text], input[type=email], input[type=number]{
+                width: 90%;
+                padding: 8px;
+                border: none;
+                border-bottom: 1px solid $mainBlue;
+                background: none;
+                margin: 20px 0px;
+                margin-left: 5%;
+                font-size: 18px;
+            }
+            button{
+                width: 90%;
+                margin-top: 40px;
+                margin-left: 5%;
+                padding: 10px;
+                font-size: 18px;
+                background: $mainBlue;
+                color: $almostWhite;
+                border-radius: 10px;
+                border: none;
+            }
+        }
+        .rightSide{
+            width: 90%;
+            @include centerObj();
+            max-width: 500px;
+            padding: 20px 0px;
+            .titleBox{
+                width: 90%;
+                @include centerObj();
+                padding: 10px 0px;
+                .title{
+                    font-size: 40px;
+                    font-weight: 300;
+                    color: $mainBlue;
+                    text-align: center;
+                }
+            }
+            .phoneBox{
+                width: 90%;
+                margin-left: 5%;
+                padding: 30px 0px 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .imgBox{
+                    width: 40px;
+                    height: 40px;
+                    img{
+                        @include imgFill();
+                    }
+                }
+                .phoneNumber{
+                    text-decoration: none;
+                    color: $accentBlue;
+                    font-size: 22px;
+                    padding-top: 20px;
+                }
+            }
+            .emailBox{
+                width: 90%;
+                margin-left: 5%;
+                padding: 30px 0px 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .imgBox{
+                    width: 40px;
+                    height: 40px;
+                    img{
+                        @include imgFill();
+                    }
+                }
+                .email{
+                    text-decoration: none;
+                    color: $accentBlue;
+                    font-size: 22px;
+                    padding-top: 20px;
+                }
+            }
+            .iconBox{
+                width: 90%;
+                max-width: 300px;
+                @include centerObj();
+                img{
+                    @include imgFill();
+                }
+            }
+        }
+    }
+    .custom-shape-divider-top-1643571572 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+    }
+    
+    .custom-shape-divider-top-1643571572 svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 100px;
+    }
+    
+    .custom-shape-divider-top-1643571572 .shape-fill {
+        fill: $lighterGrey;
+    }
+}
